@@ -34,7 +34,7 @@ export const SearchButton = styled.button`
     border: none;
     border-radius: 1vh;
     flex: 1;
-    background-color: #4ca349;
+    background-color: ${({ theme }) => theme.colors.green};
     color: white;
     font-family: ${({ theme }) => theme.fonts.standard};
     margin-left: 1vh;
@@ -44,6 +44,9 @@ export const SearchButton = styled.button`
     &:focus{
         outline: none;
         box-shadow: 0px 0px 5px #0066ff;
+    }
+    &:hover {
+        background-color: ${({ theme }) => theme.colors.darkgreen};
     }
 `
 

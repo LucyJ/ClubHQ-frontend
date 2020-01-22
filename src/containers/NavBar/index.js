@@ -20,7 +20,7 @@ const NavBar = () => (
     </ButtonLink>
     <ButtonLink to="/Browse">
       <NavButton>
-            Advanced Search
+            Top Clubs
       </NavButton>
     </ButtonLink>
     <ButtonLink to="/Browse">
