@@ -54,3 +54,7 @@ export const LoginButton = styled.button`
     }
 
 `
+export const Error = styled.div`
+    font-family: ${({ theme }) => theme.fonts.standard};
+    color: red;
+`

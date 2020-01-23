@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import { useMutation } from '@apollo/react-hooks'
 import { REGISTER } from './graphql'
 import { LoginInput, LoginContainer, LoginButton } from './styles'
@@ -9,6 +10,7 @@ const SignUp = () => {
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [classYear, setClassYear] = useState('')
+  const history = useHistory()
 
   const [reg, { loading, error: regError }] = useMutation(
     REGISTER,
@@ -16,7 +18,10 @@ const SignUp = () => {
       variables: {
         email, password, firstName, lastName, classYear,
       },
-      onCompleted: ({ register: { token } }) => localStorage.setItem('token', token),
+      onCompleted: ({ register: { token } }) =>{
+        localStorage.setItem('token', token)
+        history.push('/')
+      },
     },
   )
 

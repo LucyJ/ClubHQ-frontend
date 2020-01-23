@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams, useHistory } from 'react-router-dom'
+import { useParams, useHistory, Redirect } from 'react-router-dom'
 import { useQuery } from '@apollo/react-hooks'
 import { GETCLUB } from './graphql'
 import ShowComments from './ShowComments'
@@ -12,10 +12,13 @@ const SpecificClub = () => {
   // const info = { title: 'Club' }
   const { id } = useParams()
   const history = useHistory()
-  const [data, error] = useQuery(GETCLUB, { variables: { clubId: id }, partialRefetch: true })
+  const {loading, data, error} = useQuery(GETCLUB, 
+    { variables: { clubId: id }, partialRefetch: true })
   if (error) {
-    history.push('/Browse')
+    return <Redirect to="/Browse"/>
   }
+  if (loading) return 'Loading!'
+
 
   return (
     <div style={{
@@ -24,7 +27,7 @@ const SpecificClub = () => {
     >
       <LargeContainer>
         <TitleContainer>
-          <Title>{ data.title }</Title>
+          <Title>{ data.name }</Title>
         </TitleContainer>
       </LargeContainer>
       <LargeContainer>
