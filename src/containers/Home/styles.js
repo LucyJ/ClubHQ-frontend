@@ -13,6 +13,8 @@ export const JumboImage = styled.img`
     justify-content: center;
     align-items: center;
     opacity: 60%;
+    max-width: 100%;
+    width:100%;
 
 `
 export const HomeText = styled.p`
