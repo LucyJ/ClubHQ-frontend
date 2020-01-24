@@ -38,7 +38,7 @@ export const NavButton = styled.button`
     border: none;
     font-family: ${({ theme }) => theme.fonts.standard};
     font-weight: bold;
-    font-size: 4vh;
+    font-size: 3vh;
     color: white;
     transition: .25s;
     &:focus{
@@ -69,4 +69,28 @@ export const ButtonLink = styled(Link)`
     text-decoration: none;
     flex:1;
     margin: 0px;
+    transition: 0.25s;
+    &:hover{
+        flex:1.25;
+    } 
+`
+export const LogInOut = styled.button`
+    width: 100%;
+    height: 100%;
+    background-color: ${({ theme }) => theme.colors.gold};
+    border: none;
+    font-family: ${({ theme }) => theme.fonts.standard};
+    font-weight: bold;
+    font-size: 4vh;
+    color: white;
+    transition: .25s;
+    &:focus{
+        outline: none;
+    }
+
+    &:hover{
+        background-color: ${({ theme }) => theme.colors.darkgold};
+        font-size: 4.5vh;
+        cursor: pointer;
+    } 
 `

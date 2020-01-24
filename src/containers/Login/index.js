@@ -4,9 +4,11 @@ import { useMutation } from '@apollo/react-hooks'
 import {
   LOGIN,
 } from './graphql.js'
-import { LoginInput, LoginContainer, LoginButton, Error } from './styles'
+import {
+  LoginInput, LoginContainer, LoginButton, Error,
+} from './styles'
 
-const Login = () => {
+const Login = ({ tokenState, setTokenState }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [message, setMessage] = useState('')
@@ -18,7 +20,9 @@ const Login = () => {
       variables: { email, password },
       onCompleted: ({ login: { token } }) => {
         localStorage.setItem('token', token)
-        history.push('/')
+        history.push('/Browse')
+        return setTokenState(1)
+        // return window.location.reload()
       },
       onError: ({ graphQLErrors }) => {
         if (graphQLErrors) {
@@ -33,6 +37,7 @@ const Login = () => {
 
   if (logLoading) return 'Loading'
 
+
   return (
     <LoginContainer>
       <p style={{
@@ -42,7 +47,7 @@ const Login = () => {
 Log In:
       </p>
       <LoginInput name="email" placeholder="email" value={email} onChange={e => setEmail(e.target.value)} />
-      <LoginInput name="password" placeholder="password" value={password} onChange={e => setPassword(e.target.value)} />
+      <LoginInput type="password" name="password" placeholder="password" value={password} onChange={e => setPassword(e.target.value)} />
       <LoginButton onClick={log}>Log In</LoginButton>
       {logError ? <Error>{message}</Error> : <p />}
     </LoginContainer>

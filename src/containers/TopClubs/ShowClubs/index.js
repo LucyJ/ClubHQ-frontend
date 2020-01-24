@@ -1,10 +1,10 @@
 import React from 'react'
 import { ResultCard, ClubText, StyledLink } from './styles'
 
-const ShowClubs = ({ clubArray }) => clubArray.map(({ id, name }) => (
+const ShowClubs = ({ clubArray }) => clubArray.map(({ id, name, avgRating }) => (
   <StyledLink to={`/Clubs/${id}`} key={id}>
     <ResultCard>
-      <ClubText>{name}</ClubText>
+      <ClubText>{name} {avgRating}</ClubText>
     </ResultCard>
   </StyledLink>
 ))

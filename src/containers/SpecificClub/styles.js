@@ -36,7 +36,7 @@ export const SummaryContainer = styled.div`
     padding: 5vh;
     margin: 2vh;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    height: 100%;
+    
 
 `
 export const SummaryHead = styled.h1`
@@ -49,12 +49,78 @@ export const Summary = styled.p`
     font-family: ${({ theme }) => theme.fonts.standard};
     color: white;
 `
+export const RatingHead = styled.h1`
+    font-family: ${({ theme }) => theme.fonts.standard};
+    color: white;
+    font-weight: bold;
+    font-size: 2vh;
+`
+
+export const Rating = styled.p`
+    font-family: ${({ theme }) => theme.fonts.standard};
+    color: white;
+    font-size: 2vh;
+`
+
+export const EmailHead = styled.h1`
+    font-family: ${({ theme }) => theme.fonts.standard};
+    color: white;
+    font-weight: bold;
+    font-size: 2vh;
+`
+
+export const Email = styled.p`
+    font-family: ${({ theme }) => theme.fonts.standard};
+    color: white;
+    font-size: 2vh;
+`
+
+export const WebsiteHead = styled.h1`
+    font-family: ${({ theme }) => theme.fonts.standard};
+    color: white;
+    font-weight: bold;
+    font-size: 2vh;
+`
+
+export const Website = styled.p`
+    font-family: ${({ theme }) => theme.fonts.standard};
+    color: white;
+    font-size: 2vh;
+`
+
+export const SizeHead = styled.h1`
+    font-family: ${({ theme }) => theme.fonts.standard};
+    color: white;
+    font-weight: bold;
+    font-size: 2vh;
+`
+
+export const Size = styled.p`
+    font-family: ${({ theme }) => theme.fonts.standard};
+    color: white;
+    font-size: 2vh;
+`
+
+export const CompetitivenessHead = styled.h1`
+    font-family: ${({ theme }) => theme.fonts.standard};
+    color: white;
+    font-weight: bold;
+    font-size: 2vh;
+`
+
+export const Competitiveness = styled.p`
+    font-family: ${({ theme }) => theme.fonts.standard};
+    color: white;
+    
+`
 
 export const SmallContainer = styled.div`
     display: flex;
     flex-direction: column;
     margin: 2vh;
     flex: 1;
+    font-size: 2vh;
+    height: 100%;
 `
 export const SmallerContainer = styled.div`
     display: flex;

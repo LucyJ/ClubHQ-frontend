@@ -6,16 +6,20 @@ import ShowComments from './ShowComments'
 import {
   LargeContainer, SmallContainer, SmallerContainer, Title, TitleContainer,
   SummaryContainer, SummaryHead, Summary,
+  RatingHead, Rating,
+  EmailHead, Email,
+  WebsiteHead, Website, SizeHead, Size,
+  CompetitivenessHead, Competitiveness,
 } from './styles'
 
 const SpecificClub = () => {
   // const info = { title: 'Club' }
   const { id } = useParams()
   const history = useHistory()
-  const {loading, data, error} = useQuery(GETCLUB, 
+  const { loading, data, error } = useQuery(GETCLUB,
     { variables: { clubId: id }, partialRefetch: true })
   if (error) {
-    return <Redirect to="/Browse"/>
+    return <Redirect to="/Browse" />
   }
   if (loading) return 'Loading!'
 
@@ -27,20 +31,37 @@ const SpecificClub = () => {
     >
       <LargeContainer>
         <TitleContainer>
-          <Title>{ data.name }</Title>
+          <Title>{ data.getClub.name }</Title>
         </TitleContainer>
       </LargeContainer>
       <LargeContainer>
         <SummaryContainer>
           <SummaryHead>Summary:</SummaryHead>
-          <Summary>{data.summary}</Summary>
+          <Summary>{data.getClub.summary}</Summary>
         </SummaryContainer>
         <SmallContainer>
           <SmallerContainer>
-              Rating:
+            <RatingHead>Rating:</RatingHead>
+            <Rating>{data.getClub.avgRating}</Rating>
           </SmallerContainer>
           <SmallerContainer>
-              Tags:
+            <EmailHead>Email:</EmailHead>
+            <Email>{data.getClub.email}</Email>
+          </SmallerContainer>
+          <SmallerContainer>
+            <WebsiteHead>Website:</WebsiteHead>
+            <Website>{data.getClub.website}</Website>
+          </SmallerContainer>
+          <SmallerContainer>
+            <SizeHead>Size:</SizeHead>
+            <Size>{data.getClub.size}</Size>
+          </SmallerContainer>
+          <SmallerContainer>
+            <CompetitivenessHead>Competitiveness: </CompetitivenessHead>
+            <Competitiveness>
+              {' '}
+              {data.getClub.competitiveness}
+            </Competitiveness>
           </SmallerContainer>
         </SmallContainer>
       </LargeContainer>
