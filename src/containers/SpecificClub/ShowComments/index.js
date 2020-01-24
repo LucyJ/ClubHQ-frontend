@@ -30,7 +30,7 @@ const ShowComments = ({ id }) => {
         ...form,
       },
     },
-    onCompleted: () => console.log('yay'),
+    onCompleted: () => window.location.reload(),
     update: (client, { data: { addEvaluation } }) => {
       try {
         const data = client.readQuery({ query: GETEVAL })

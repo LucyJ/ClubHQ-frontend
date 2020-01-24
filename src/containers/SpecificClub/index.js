@@ -43,14 +43,6 @@ const SpecificClub = () => {
             <Rating>{data.getClub.avgRating}</Rating>
           </SmallerContainer>
           <SmallerContainer>
-            <RatingHead>Hours of Meeting: </RatingHead>
-            <Rating>{data.getClub.avgRating}</Rating>
-          </SmallerContainer>
-          <SmallerContainer>
-            <RatingHead>Hours of Working:</RatingHead>
-            <Rating>{data.getClub.avgRating}</Rating>
-          </SmallerContainer>
-          <SmallerContainer>
             <SizeHead>Size:</SizeHead>
             <Size>{data.getClub.size}</Size>
           </SmallerContainer>
