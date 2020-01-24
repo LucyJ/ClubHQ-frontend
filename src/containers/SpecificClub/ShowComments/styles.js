@@ -33,7 +33,7 @@ export const CommentButton = styled.button`
     flex: 1;
     border: none;
     border-radius: 1vh;
-    background-color: ${({ theme }) => theme.colors.green};
+    background-color: ${({ theme }) => theme.colors.gold};
     font-size: 3vh;
     font-weight: bold;
     color: white;

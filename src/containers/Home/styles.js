@@ -34,6 +34,7 @@ export const TextContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 `
 export const LoginButton = styled.button`
     border: none;

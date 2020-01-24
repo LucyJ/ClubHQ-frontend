@@ -31,7 +31,7 @@ export const SummaryContainer = styled.div`
     display: flex;
     flex-direction: column;
     flex: 2;
-    background-color: #195efa;
+    background-color:  ${({ theme }) => theme.colors.gold};
     border-radius: 2vh;
     padding: 5vh;
     margin: 2vh;
@@ -60,6 +60,7 @@ export const Rating = styled.p`
     font-family: ${({ theme }) => theme.fonts.standard};
     color: white;
     font-size: 2vh;
+    margin-left: 1vh;
 `
 
 export const EmailHead = styled.h1`
@@ -73,6 +74,7 @@ export const Email = styled.p`
     font-family: ${({ theme }) => theme.fonts.standard};
     color: white;
     font-size: 2vh;
+    margin-left: 1vh;
 `
 
 export const WebsiteHead = styled.h1`
@@ -86,6 +88,7 @@ export const Website = styled.p`
     font-family: ${({ theme }) => theme.fonts.standard};
     color: white;
     font-size: 2vh;
+    margin-left: 1vh;
 `
 
 export const SizeHead = styled.h1`
@@ -99,6 +102,7 @@ export const Size = styled.p`
     font-family: ${({ theme }) => theme.fonts.standard};
     color: white;
     font-size: 2vh;
+    margin-left: 1vh;
 `
 
 export const CompetitivenessHead = styled.h1`
@@ -111,7 +115,7 @@ export const CompetitivenessHead = styled.h1`
 export const Competitiveness = styled.p`
     font-family: ${({ theme }) => theme.fonts.standard};
     color: white;
-    
+    margin-left: 1vh;
 `
 
 export const SmallContainer = styled.div`
@@ -127,7 +131,21 @@ export const SmallerContainer = styled.div`
     flex:1;
     justify-content: center;
     align-items:center;
-    background-color: ${({ theme }) => theme.colors.Columbia.classic};
+    background-color:  ${({ theme }) => theme.colors.crimson};
+    font-family: ${({ theme }) => theme.fonts.standard};
+    color: white;
+    font-weight: bold;
+    margin: 1vh;
+    padding: 2vh;
+    border-radius: 2vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+`
+export const BottomContainer = styled.div`
+    display: flex;
+    flex:1;
+    justify-content: center;
+    align-items:center;
+    background-color: #211a2e;
     font-family: ${({ theme }) => theme.fonts.standard};
     color: white;
     font-weight: bold;

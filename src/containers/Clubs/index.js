@@ -36,7 +36,7 @@ const Clubs = () => {
       // },
     },
   )
-  if (loading) return 'Loading!'
+  if (loading) return (<ClubContainer><SearchBar /></ClubContainer>)
   if (error) return 'error!'
 
   const clubArray = () => {

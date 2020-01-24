@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams, useHistory, Redirect } from 'react-router-dom'
+import { useParams, Redirect } from 'react-router-dom'
 import { useQuery } from '@apollo/react-hooks'
 import { GETCLUB } from './graphql'
 import ShowComments from './ShowComments'
@@ -9,13 +9,11 @@ import {
   RatingHead, Rating,
   EmailHead, Email,
   WebsiteHead, Website, SizeHead, Size,
-  CompetitivenessHead, Competitiveness,
+  CompetitivenessHead, Competitiveness, BottomContainer,
 } from './styles'
 
 const SpecificClub = () => {
-  // const info = { title: 'Club' }
   const { id } = useParams()
-  const history = useHistory()
   const { loading, data, error } = useQuery(GETCLUB,
     { variables: { clubId: id }, partialRefetch: true })
   if (error) {
@@ -31,7 +29,7 @@ const SpecificClub = () => {
     >
       <LargeContainer>
         <TitleContainer>
-          <Title>{ data.getClub.name }</Title>
+          <Title>{data.getClub.name}</Title>
         </TitleContainer>
       </LargeContainer>
       <LargeContainer>
@@ -45,27 +43,29 @@ const SpecificClub = () => {
             <Rating>{data.getClub.avgRating}</Rating>
           </SmallerContainer>
           <SmallerContainer>
-            <EmailHead>Email:</EmailHead>
-            <Email>{data.getClub.email}</Email>
-          </SmallerContainer>
-          <SmallerContainer>
-            <WebsiteHead>Website:</WebsiteHead>
-            <Website>{data.getClub.website}</Website>
-          </SmallerContainer>
-          <SmallerContainer>
             <SizeHead>Size:</SizeHead>
             <Size>{data.getClub.size}</Size>
           </SmallerContainer>
           <SmallerContainer>
             <CompetitivenessHead>Competitiveness: </CompetitivenessHead>
             <Competitiveness>
-              {' '}
               {data.getClub.competitiveness}
             </Competitiveness>
           </SmallerContainer>
         </SmallContainer>
       </LargeContainer>
-      <ShowComments />
+
+      <LargeContainer>
+        <BottomContainer>
+          <EmailHead>Email:</EmailHead>
+          <Email>{data.getClub.email}</Email>
+        </BottomContainer>
+        <BottomContainer>
+          <WebsiteHead>Website:</WebsiteHead>
+          <Website>{data.getClub.website}</Website>
+        </BottomContainer>
+      </LargeContainer>
+      <ShowComments id={data.getClub.id} />
     </div>
   )
 }

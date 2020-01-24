@@ -53,8 +53,8 @@ export const NavButton = styled.button`
 
 `
 export const Image = styled.img`
-    max-height: 100%;
-    max-width: 100%;
+    
+    height:8vh;
 `
 
 export const LogoLink = styled(Link)`
@@ -64,6 +64,9 @@ export const LogoLink = styled(Link)`
     height: 8vh;
     border: none;
     margin: 0.7vh;
+    &:hover{
+        cursor: pointer;
+    }
 `
 export const ButtonLink = styled(Link)`
     text-decoration: none;

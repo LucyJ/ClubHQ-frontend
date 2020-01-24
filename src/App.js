@@ -13,6 +13,7 @@ import Login from './containers/Login'
 import SignUp from './containers/SignUp'
 import Donate from './containers/Donate'
 import { PrivateRoute } from './containers/Auth/ProtectedRoute'
+import TopClubs from './containers/TopClubs'
 
 const App = () => {
   const [tokenState, setTokenState] = useState(0)
@@ -25,6 +26,7 @@ const App = () => {
             <Switch>
               <PrivateRoute path="/Clubs/:id" component={SpecificClub} />
               <PrivateRoute path="/Browse" component={Clubs} />
+              <PrivateRoute path="/TopClubs" component={TopClubs} />
               <Route path="/Login">
                 <Login tokenState={tokenState} setTokenState={setTokenState} />
               </Route>

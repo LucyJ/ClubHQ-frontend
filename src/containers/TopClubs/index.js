@@ -9,9 +9,7 @@ import ShowClubs from './ShowClubs'
 import { ClubContainer } from './styles'
 
 const Clubs = () => {
-
   const { loading, error, data } = useQuery(ALLCLUBS)
-
 
   if (loading) return 'Loading!'
   if (error) return 'error!'
@@ -23,7 +21,7 @@ const Clubs = () => {
     data.allClubs.map(el => arr.push(el))
 
     arr.sort((a, b) => {
-      if (a.avgRating > b.avgRating) {
+      if (a.avgRating < b.avgRating) {
         return 1
       }
 

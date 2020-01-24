@@ -24,8 +24,10 @@ const Login = ({ tokenState, setTokenState }) => {
         return setTokenState(1)
         // return window.location.reload()
       },
+
       onError: ({ graphQLErrors }) => {
         if (graphQLErrors) {
+          
           // graphQLErrors.map(({ message, locations, path }) => console.log(
           // `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`,
           setMessage(graphQLErrors[0].message)
